@@ -29,10 +29,12 @@ logging:
     com.netflix.discovery: INFO
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  logback:
+    rollingpolicy:
+      max-size: 10MB
+      max-history: 30
   file:
     name: logs/eureka-server.log
-    max-size: 10MB
-    max-history: 30
 
 management:
   endpoints:
@@ -42,3 +44,11 @@ management:
   endpoint:
     health:
       show-details: always
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
